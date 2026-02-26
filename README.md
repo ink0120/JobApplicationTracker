@@ -1,0 +1,2 @@
+# JobApplicationTracker
+Track job applications
