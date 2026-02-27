@@ -1,0 +1,44 @@
+[
+  {
+    "Company": "Google",
+    "Position": "Frontend Developer",
+    "Status": "Applied",
+    "Date Applied": "2026-02-10",
+    "Notes": "Applied via careers page. Referred by John."
+  },
+  {
+    "Company": "Amazon",
+    "Position": "Software Engineer",
+    "Status": "Interview",
+    "Date Applied": "2026-02-05",
+    "Notes": "Completed online assessment. Waiting for technical round."
+  },
+  {
+    "Company": "Microsoft",
+    "Position": "Full Stack Developer",
+    "Status": "Offer",
+    "Date Applied": "2026-01-28",
+    "Notes": "Received offer. Reviewing compensation package."
+  },
+  {
+    "Company": "Meta",
+    "Position": "React Developer",
+    "Status": "Rejected",
+    "Date Applied": "2026-01-15",
+    "Notes": "Rejected after final interview."
+  },
+  {
+    "Company": "Netflix",
+    "Position": "UI Engineer",
+    "Status": "Applied",
+    "Date Applied": "2026-02-18",
+    "Notes": "Application submitted through LinkedIn."
+  },
+  {
+    "Company": "Spotify",
+    "Position": "Frontend Engineer",
+    "Status": "Interview",
+    "Date Applied": "2026-02-01",
+    "Notes": "First round completed. Preparing for system design."
+  }
+]

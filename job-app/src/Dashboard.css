@@ -1,0 +1,10 @@
+
+.Dashboard{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: left;
+    gap: 20px;
+    padding: 20px;
+}
+
