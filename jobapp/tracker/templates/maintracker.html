@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <style>
+            * {
+                font-family: 'Courier New', Courier, monospace;
+                color: antiquewhite;
+                box-sizing: border-box;
+            }
+            button, a {
+                color: blue;
+            }
+            body {
+                background-color: cornflowerblue;
+                padding: 20px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th, td {
+                border: 1px solid antiquewhite;
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+            tr:nth-child(even) {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+            .empty-row td {
+                text-align: center;
+                font-style: italic;
+                opacity: 0.7;
+            }
+            .status-P { color: khaki; }
+            .status-S { color: lightgreen; }
+            .status-I { color: lightskyblue; }
+            .status-R { color: lightcoral; }
+        </style>
+    </head>
+    <body>
+        <p>Email: {{ user.email }}</p>
+         <h1>Job Applications for {{ user.username }}</h1>
+         <div>
+            <p>There will be a search bar here.</p>
+         </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Job Title</th>
+                    <th>Salary</th>
+                    <th>Date Applied</th>
+                    <th>Status</th>
+                    <th>Contact</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for listing in listings %}
+                <tr>
+                    <td>{{ listing.companyName }}</td>
+                    <td>{{ listing.jobTitle }}</td>
+                    <td>{{ listing.salary }}</td>
+
+                    <td>{{ listing.dateApplied }}</td>
+                    <td class="status-{{ listing.status }}">{{ listing.get_status_display }}</td>
+                    <td>{{ listing.companyContact }}</td>
+                    <td><button onClick="">EDIT</button></td>
+                </tr>
+                {% empty %}
+                <tr class="empty-row">
+                    <td colspan="7">No job applications yet — <a href="{% url 'addListing' %}">Add one to get started</a></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div>
+            <button><a href="{% url 'addListing' %}">Add Listing</a></button>
+            <button></button>
+        </div>
+
+
+
+        {% if user.is_authenticated %}
+            <p>You're logged in.</p>
+            <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">Log out</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}">Log in</a>
+        {% endif %}
+    </body>
+</html>

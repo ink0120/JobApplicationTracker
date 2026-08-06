@@ -1,2 +1,2 @@
-# JobApplicationTracker
+-- JobApplicationTracker
 Track job applications

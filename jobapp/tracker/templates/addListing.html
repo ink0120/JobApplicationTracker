@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                font-family: 'Courier New', Courier, monospace;
+                color: antiquewhite;
+            }
+            body {
+                background-color: cornflowerblue;
+                padding: 20px;
+            }
+            .form-group {
+                margin-bottom: 12px;
+            }
+            label {
+                display: block;
+                margin-bottom: 4px;
+            }
+            input, select {
+                padding: 6px;
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Add Job Application</h1>
+
+        <form action="{% url 'addListing' %}" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" name="companyName" id="companyName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" name="jobTitle" id="jobTitle" required>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="number" step="0.01" name="salary" id="salary">
+            </div>
+
+            <div class="form-group">
+                <label for="dateApplied">Date of Application</label>
+                <input type="date" name="dateApplied" id="dateApplied" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select name="status" id="status">
+                    <option value="P">Pending</option>
+                    <option value="S">Successful</option>
+                    <option value="I">Interviewing</option>
+                    <option value="R">Rejected</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="companyContact">Company Contact</label>
+                <input type="email" name="companyContact" id="companyContact">
+            </div>
+
+            <button type="submit">Add Listing</button>
+        </form>
+
+        <p><a href="{% url 'user-tracker' %}">Back to tracker</a></p>
+    </body>
+</html>
+</body>

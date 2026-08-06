@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                font-family: 'Courier New', Courier, monospace;
+                color: antiquewhite;
+            }
+            body {
+                background-color: cornflowerblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend>
+                        Login bro
+                    </legend>
+                    <div>
+                        <label for="id_username">Username</label>
+                        <input type="text" name="username" id="id_username" required>
+                    </div>
+                    <div>
+                        <label for="id_email">Email</label>
+                        <input type="email" name="email" id="id_email" required>
+                    </div>
+                    <div>
+                        <label for="id_password1">Password</label>
+                        <input type="password" name="password" id="id_password" required>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <button type="submit">Log in</button>
+                </div>
+            </form>
+            <div>
+                <small>No account? <a href="{% url 'register' %}">Sign up</a></small>
+            </div>
+        </div>
+    </body>
+</html>
