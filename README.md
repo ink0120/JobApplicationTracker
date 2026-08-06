@@ -1,2 +1,3 @@
 # JobApplicationTracker
 Track job applications
+work in progress im learning django and react still...
