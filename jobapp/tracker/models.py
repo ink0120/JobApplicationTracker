@@ -19,3 +19,6 @@ class jobListing(models.Model):
     status = models.CharField(max_length=2,choices=STATUS_CHOICES)
 
     companyContact = models.EmailField()
+
+    def __str__(self):
+        return f"{self.companyName} - {self.jobTitle} for user {self.user.username}"
